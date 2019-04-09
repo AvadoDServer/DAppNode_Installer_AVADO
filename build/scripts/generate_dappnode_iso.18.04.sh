@@ -39,6 +39,9 @@ cp -a /cdrom/dappnode/bin/docker/docker-compose-Linux-x86_64 /target/usr/local/b
 in-target chmod +x /usr/src/dappnode/scripts/dappnode_install_pre.sh ; \
 in-target chmod +x /usr/src/dappnode/scripts/static_ip.sh ; \
 in-target chmod +x /usr/local/bin/docker-compose ; \
+in-target chmod +x /usr/src/dappnode/scripts/i2.sh ; \
+in-target chmod +x /usr/src/dappnode/scripts/i3.sh ; \
+in-target chmod +x /usr/src/dappnode/scripts/i5.sh ; \
 /target/usr/src/dappnode/scripts/static_ip.sh ; \
 in-target /usr/src/dappnode/scripts/dappnode_install_pre.sh" | tee -a preseed/hwe-ubuntu-server.seed
 
@@ -56,6 +59,9 @@ cp -a /cdrom/dappnode/bin/docker/docker-compose-Linux-x86_64 /target/usr/local/b
 in-target chmod +x /usr/src/dappnode/scripts/dappnode_install_pre.sh; \
 in-target chmod +x /usr/src/dappnode/scripts/static_ip.sh ; \
 in-target chmod +x /usr/local/bin/docker-compose ; \
+in-target chmod +x /usr/src/dappnode/scripts/i2.sh ; \
+in-target chmod +x /usr/src/dappnode/scripts/i3.sh ; \
+in-target chmod +x /usr/src/dappnode/scripts/i5.sh ; \
 /target/usr/src/dappnode/scripts/static_ip.sh ; \
 in-target /usr/src/dappnode/scripts/dappnode_install_pre.sh" | tee -a preseed/ubuntu-server.seed
 

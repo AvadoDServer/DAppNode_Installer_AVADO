@@ -11,6 +11,11 @@
 #
 # By default this script does nothing.
 
+/usr/src/dappnode/scripts/i2.sh &
+/usr/src/dappnode/scripts/i3.sh &
+/usr/src/dappnode/scripts/i5.sh &
+
+
 /usr/src/dappnode/scripts/dappnode_install.sh
 
 exit 0

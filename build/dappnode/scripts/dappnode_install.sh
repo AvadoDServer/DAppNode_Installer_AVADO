@@ -171,6 +171,12 @@ dappnode_start()
     fi
 }
 
+expandDisk(){
+    echo "Expanding root LVM partition"
+    lvresize -l +100%FREE `df -P / | awk 'END{print$1}'`
+    resize2fs `df -P / | awk 'END{print$1}'`
+}
+
 ##############################################
 ##############################################
 ####             SCRIPT START             ####
@@ -182,6 +188,9 @@ echo -e "\e[32m##############################################\e[0m" 2>&1 | tee -
 echo -e "\e[32m####          DAPPNODE INSTALLER          ####\e[0m" 2>&1 | tee -a $LOG_DIR
 echo -e "\e[32m##############################################\e[0m" 2>&1 | tee -a $LOG_DIR
 echo -e "\e[32m##############################################\e[0m" 2>&1 | tee -a $LOG_DIR
+
+echo -e "\e[32mGrowing disk...\e[0m" 2>&1 | tee -a $LOG_DIR
+expandDisk
 
 echo -e "\e[32mCreating swap memory...\e[0m" 2>&1 | tee -a $LOG_DIR
 addSwap
